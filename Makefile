@@ -1,6 +1,6 @@
 NAME = push_swap
 
-C_FILES = main.c
+C_FILES = main.c join.c
 SRCS = $(addprefix srcs/,$(C_FILES))
 
 CFLAGS = -Wall -Wextra -Werror

@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 20:39:04 by baiannon          #+#    #+#             */
-/*   Updated: 2024/05/03 16:47:07 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/05/31 18:05:38 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
 
-typedef struct s_list
-{
-	int	number;
-	struct s_list *next;
-}	t_list;
+// typedef struct s_list
+// {
+// 	int	number;
+// 	struct s_list *next;
+// }	t_list;
+
+char	*join_And_Split_Args(int ac, char **av);
 
 #endif
