@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 16:38:35 by baiannon          #+#    #+#             */
-/*   Updated: 2024/05/31 18:23:40 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/06/06 17:37:59 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strdup_modified(const char *s)
 	dest[i + 1] = '\0';
 	return (dest);
 }
-char *join_And_Split_Args(int ac, char **av)
+char *join_Args(int ac, char **av)
 {
 	int		i;
 	char	*str;
@@ -49,4 +49,13 @@ char *join_And_Split_Args(int ac, char **av)
 	}
 	ft_printf("%s", str);
 	return (str);
+}
+
+char *split_Args(char *str)
+{
+	char	**split;
+	
+	split = ft_split(*str, ' ');
+	create_list(split);
+	return(split);
 }
