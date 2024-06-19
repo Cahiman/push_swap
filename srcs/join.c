@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 16:38:35 by baiannon          #+#    #+#             */
-/*   Updated: 2024/06/06 17:37:59 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/06/19 18:45:02 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,46 @@ char	*ft_strdup_modified(const char *s)
 	dest[i + 1] = '\0';
 	return (dest);
 }
-char *join_Args(int ac, char **av)
+int len_Args(int ac, char **av, t_swap *swap)
+{
+	
+	int	i;
+
+	i = 1;
+	while(av[i])
+	{
+		swap->total_len += ft_strlen(av[i] + 1);
+		i++;
+	}
+	return (swap->total_len);
+}
+
+char *join_Args(int ac, char **av, t_swap *swap)
 {
 	int		i;
-	char	*str;
 
-	str = malloc(sizeof(char) * 100000);
+	swap->str = malloc(sizeof(char) * 100000 + 1);
+	if (!swap->str)
+		return (NULL);
 	i = 1;
 	while (ac > i)
 	{
-		str = ft_strjoin(str, av[i]);
-		str = ft_strdup_modified(str);
+		swap->str = ft_strjoin(swap->str, av[i]);
+		swap->str = ft_strdup_modified(swap->str);
 		i++;
 	}
-	ft_printf("%s", str);
-	return (str);
+	// ft_printf("%s", str);
+	return (swap->str);
 }
 
-char *split_Args(char *str)
+char *split_Args(int ac, char **av, t_swap *swap)
 {
+	(void)ac;
+	(void)av;
 	char	**split;
 	
-	split = ft_split(*str, ' ');
-	create_list(split);
-	return(split);
+	swap->args = join_Args(ac, av, swap);
+	split = ft_split(swap->args, ' ');
+	// create_list(split);
+	return(*split);
 }

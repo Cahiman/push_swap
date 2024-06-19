@@ -6,15 +6,15 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 17:21:34 by baiannon          #+#    #+#             */
-/*   Updated: 2024/06/06 17:40:08 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/06/19 16:51:52 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-p_list *create_list(char **split)
+t_swap *create_list(char **split)
 {
-	p_list *head;
+	t_swap *head;
 	int	i;
 
 	i = 0;
@@ -24,16 +24,10 @@ p_list *create_list(char **split)
 		ft_atoi(split[i]);
 		i++;
 	}
-}
-	p_list *enp_list(p_list *head, int n)
-{
-	p_list *new = (p_list *)malloc(sizeof(p_list));
-
-	
-	new->number = n;
+	return(head);
 }
 
-p_list *list_end(p_list *head, int n)
+t_swap *list_end(t_swap *head, int n)
 {
 	if (!head)
 		return (NULL);
