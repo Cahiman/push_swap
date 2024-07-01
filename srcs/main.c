@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 20:38:29 by baiannon          #+#    #+#             */
-/*   Updated: 2024/06/19 18:37:20 by baiannon         ###   ########.fr       */
+/*   Created: 2024/06/26 15:38:14 by baiannon          #+#    #+#             */
+/*   Updated: 2024/06/26 15:44:59 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,25 @@
 
 int	main(int ac, char **av)
 {
-	t_swap swap;
-	char *test;
-	int i = 0;
+t_stack *a;
+t_stack *b;
 
-	char *str;
-	if (ac < 2)
-		return (0);
-	str = join_Args(ac, av, &swap);
-	test = split_Args(ac, av, &swap);
-	while(test[i])
-	{
-		ft_printf("%s\n", test[i]);
-		i++;
-	}
+a = NULL;
+b = NULL;
+if (ac == 1 || (ac == 2 && !av[1][0]))
 	return(1);
+else if (ac == 2)
+	av = ft_split(av[1], ' ');
+init_stack_a(&a, av + 1);
+if (!stack_sorted(a))
+{
+	if (stack_len(a) == 2)
+		sa(&a, false);
+	else if (stack_len(a) == 3)
+		sort_three(&a);
+	else
+		sort_stacks(&a, &b);
+}
+	free_stack(&a);
+	return (0);
 }

@@ -6,40 +6,32 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 20:39:04 by baiannon          #+#    #+#             */
-/*   Updated: 2024/06/19 18:34:46 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:37:23 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "ft_printf.h"
 # include "libft.h"
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
 
-typedef struct p_list
+typedef struct s_stack
 {
-	int				number;
-	int				nb;
-	int				cost;
-	int				index;
-	int				cheap_cost;
-	int				above_median;
-	int				total_len;
-	char			*str;
-	char			*args;
-	struct p_list	*next;
-	struct p_list	*prev;
-	struct p_list	*target;
-}	t_swap;
+	int		nbr;
+	int		index;
+	int		push_cost;
+	bool	above_median;
+	bool	cheapest;
 
-char	*join_Args(int ac, char **av, t_swap *swap);
-char	*split_Args(int ac, char **av, t_swap *swap);
-int		len_Args(int ac, char **av, t_swap *swap);
-t_swap *create_list(char **split);
+	struct s_stack *target;
+	struct s_stack *next;
+	struct s_stack *prev;
+}	t_stack;
 
 #endif

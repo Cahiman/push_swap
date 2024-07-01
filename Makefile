@@ -1,29 +1,39 @@
 NAME = push_swap
 
-C_FILES = main.c join.c list.c
+BONUS_NAME = checker
+
+C_FILES = main.c\
+
+
+C_BONUS =
+
 SRCS = $(addprefix srcs/,$(C_FILES))
 
-CFLAGS = -Wall -Wextra -Werror
+SRCS_BONUS = $(addprefix bonus/,$(C_BONUS))
 
-LIBS = printf/libftprintf.a libft/libft.a
-DEPS = $(addprefix libs/,$(LIBS))
+CFLAGS = -Wall -Werror -Wextra -I includes/ -g
 
-all: $(NAME)
+LIB = libft/libft.a
+DEPS = $(addprefix libs/,$(LIB))
 
-$(NAME):
-	make -C libs/printf
+all: ${NAME}
+
+${NAME}: ${SRCS}
 	make -C libs/libft
-	cc $(SRCS) -g3 -I includes -lm -lz -o $(NAME) $(DEPS)
+	cc ${CFLAGS} ${SRCS} -o ${NAME} ${DEPS}
+
+bonus: ${BONUS_NAME}
+
+${BONUS_NAME}: ${SRCS_BONUS}
+	make -C libs/libft
+	cc ${CFLAGS} ${SRCS_BONUS} -o ${BONUS_NAME} ${DEPS}
 
 clean:
-	make -C libs/printf clean
 	make -C libs/libft clean
 
-fclean: clean
-	make -C libs/printf fclean
-	make -C libs/libft fclean
-	rm -f $(NAME)
+fclean:	clean
+		rm -rf ${NAME} ${BONUS_NAME}
 
-re: fclean all
+re:             fclean all
 
-.PHONY:	all clean fclean re
+.PHONY:         all clean fclean re
