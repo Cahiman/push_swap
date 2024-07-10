@@ -1,27 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 16:44:28 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/10 17:08:58 by baiannon         ###   ########.fr       */
+/*   Created: 2024/07/10 16:52:05 by baiannon          #+#    #+#             */
+/*   Updated: 2024/07/10 18:25:50 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char const **av)
+t_stack	*parse(t_stack *a, const char **av)
 {
-	(void)ac;
-	t_stack *a;
+	char *join_Args;
+	char **split_Args;
+	int	i;
 
-	a = NULL;
-	a = parse(a, av);
-	return 0;
+	i = 2;
+	join_Args = ft_strdup(av[1]);
+	if (!join_Args)
+		return (NULL);
+	while (av[i])
+	{
+		join_Args = ft_strjoin(join_Args, ft_strdup(av[i]));
+		if (!join_Args)
+			return (NULL);
+		i++;
+	}
+	split_Args = ft_split(join_Args, ' ');
+	if (!split_Args)
+		return (NULL);
+	return (fill_list(a, split_Args));
 }
 
+
+int	fill_list(t_stack *a, char **av)
+{
+	size_t	i;
+	long	nbr;
+	
+	i = 0;
+	while (av[i])
+	{
+		nbr = ft_atoi(av[i]);
+		if (nbr > INT_MAX || nbr < INT_MIN)
+		{
+			write(2, "Error, overflow\n", 16);
+			ft_free(av);
+			exit(EXIT_FAILURE);
+		}
+		i++;
+	}
+	
+	
+}
 /*
 
 1- Faire un strjoin de tous les agruments (en ajoutant un espace entre chaque pour eviter futur pb split) 
@@ -35,4 +69,3 @@ int	main(int ac, char const **av)
 5-Algo -algo pour 3 chiffre -big algo (viens me voir)  --pre trie de a vers b les petits au dessus (pb) et les grand dessous (pb + rb) --mise en place du cout pour renvoyer dans A --quand tout dans A faire des rotations jusqu'a que le plus petit soit en haut
 
 */
-

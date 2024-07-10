@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:49:56 by baiannon          #+#    #+#             */
-/*   Updated: 2023/11/17 17:10:42 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/10 18:03:53 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	n;
-	int	res;
-	int	sign;
+	long int	n;
+	long int	res;
+	long int	sign;
 
 	n = 0;
 	res = 0;

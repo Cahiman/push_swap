@@ -3,6 +3,7 @@ NAME = push_swap
 BONUS_NAME = checker
 
 C_FILES = main.c\
+		parse.c\
 
 
 C_BONUS =
@@ -11,7 +12,7 @@ SRCS = $(addprefix srcs/,$(C_FILES))
 
 SRCS_BONUS = $(addprefix bonus/,$(C_BONUS))
 
-CFLAGS = -Wall -Werror -Wextra -I includes/ -g
+CFLAGS = -Wall -Werror -Wextra -I include/ -g
 
 LIB = libft/libft.a
 DEPS = $(addprefix libs/,$(LIB))

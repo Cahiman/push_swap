@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:05:46 by baiannon          #+#    #+#             */
-/*   Updated: 2023/12/01 18:04:45 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/10 17:19:17 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 char	*ft_strdup(const char *s)
 {
-	int		i;
+	size_t	i;
 	char	*dest;
 	size_t	len;
 
 	i = 0;
 	len = ft_strlen(s);
-	dest = malloc((len + 1) * sizeof(char));
+	dest = malloc((len + 2) * sizeof(char));
 	if (!s)
 		return (NULL);
 	if (dest == NULL)
 		return (NULL);
-	while (s[i])
+	while (i < len)
 	{
 		dest[i] = s[i];
 		i++;
 	}
-	dest[i] = '\0';
+	dest[i] = ' ';
+	dest[i + 1] = '\0';
 	return (dest);
 }
