@@ -6,13 +6,13 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:52:05 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/10 18:25:50 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/18 22:05:35 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*parse(t_stack *a, const char **av)
+t_node	*parse(t_node *a, const char **av)
 {
 	char *join_Args;
 	char **split_Args;
@@ -36,7 +36,7 @@ t_stack	*parse(t_stack *a, const char **av)
 }
 
 
-int	fill_list(t_stack *a, char **av)
+t_node	*fill_list(t_node *a, char **av)
 {
 	size_t	i;
 	long	nbr;
@@ -53,9 +53,41 @@ int	fill_list(t_stack *a, char **av)
 		}
 		i++;
 	}
-	
-	
+	return (a);
 }
+
+int	check_number(char *str)
+{
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str == '0')
+		str++;
+	if (ft_strlen(str) > 11)
+		return (0);
+	return (1);
+}
+
+int	get_sign(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
+	{
+		if ((str[0] == '+' || str[0] == '-') && i == 0)
+			i++;
+		if (str[i] >= '0' && str[i] <= '9')
+			i++;
+		else
+			return (0);			
+	}
+	return (1);
+}
+
 /*
 
 1- Faire un strjoin de tous les agruments (en ajoutant un espace entre chaque pour eviter futur pb split) 

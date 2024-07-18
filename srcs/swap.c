@@ -1,34 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 20:39:04 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/18 20:08:44 by baiannon         ###   ########.fr       */
+/*   Created: 2024/07/18 22:02:47 by baiannon          #+#    #+#             */
+/*   Updated: 2024/07/18 22:02:58 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdbool.h>
-# include <limits.h>
-
-typedef struct s_node
-{
-	int	nbr;
-	
-	struct s_node *next;
-}	t_node;
-
-t_node	*fill_list(t_node *a, char **av);
-t_node	*parse(t_node *a, const char **av);
-int		main(int ac, char const **av);
-void	*ft_free(char **s);
-
-#endif
