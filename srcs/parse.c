@@ -6,13 +6,13 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:52:05 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/18 22:05:35 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:17:27 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*parse(t_node *a, const char **av)
+char	**parse(char **av)
 {
 	char *join_Args;
 	char **split_Args;
@@ -32,30 +32,47 @@ t_node	*parse(t_node *a, const char **av)
 	split_Args = ft_split(join_Args, ' ');
 	if (!split_Args)
 		return (NULL);
-	return (fill_list(a, split_Args));
+	return (split_Args);
 }
 
 
-t_node	*fill_list(t_node *a, char **av)
-{
-	size_t	i;
-	long	nbr;
+// t_node	*fill_list(t_node *a, char **av)
+// {
+// 	size_t	i;
+// 	long	nbr;
 	
+// 	i = 0;
+// 	while (av[i])
+// 	{
+// 		nbr = ft_atoi(av[i]);
+// 		if (nbr > INT_MAX || nbr < INT_MIN)
+// 			exit(EXIT_FAILURE);
+// 		if (!check_double)
+// 			exit(EXIT_FAILURE);
+// 		i++;
+// 	}
+// 	return (a);
+// }
+
+int	check_double(char **arg)
+{
+	int	i;
+	int	j;
+
 	i = 0;
-	while (av[i])
+	while (arg[i])
 	{
-		nbr = ft_atoi(av[i]);
-		if (nbr > INT_MAX || nbr < INT_MIN)
+		j = i + 1;
+		while (arg[j])
 		{
-			write(2, "Error, overflow\n", 16);
-			ft_free(av);
-			exit(EXIT_FAILURE);
+			if (arg[i] == arg[j])
+				return (0);
+			j++;
 		}
 		i++;
 	}
-	return (a);
+	return (1);
 }
-
 int	check_number(char *str)
 {
 	while ((*str >= 9 && *str <= 13) || *str == 32)
@@ -84,6 +101,23 @@ int	get_sign(char *str)
 			i++;
 		else
 			return (0);			
+	}
+	return (1);
+}
+int check_args(char **split_args)
+{
+	int i;
+
+	i = 0;
+	if (!check_double(split_args))
+			return (0);
+	while (split_args[i])
+	{
+		if (!get_sign(split_args[i]))
+			return (0);
+		if (!check_number(split_args[i]))
+			return (0);
+		i++;
 	}
 	return (1);
 }

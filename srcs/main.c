@@ -6,20 +6,27 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:44:28 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/18 21:39:27 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:16:37 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char const **av)
+int	main(int ac, char **av)
 {
 	t_node *a;
+	char **split_args;
 
 	if (ac <= 1)
 		return (0);	
 	a = NULL;
-	a = parse(a, av);
+	split_args = parse(av);
+	if (!check_args(split_args))
+		exit(EXIT_FAILURE);
+	a = ft_calloc(sizeof(t_node), 1);
+	if (!a)
+		exit(EXIT_FAILURE);
+	init_list(a, split_args);
 	return 0;
 }
 

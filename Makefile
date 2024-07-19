@@ -4,6 +4,8 @@ BONUS_NAME = checker
 
 C_FILES = main.c\
 		parse.c\
+		swap.c\
+		init_list.c\
 
 
 C_BONUS =

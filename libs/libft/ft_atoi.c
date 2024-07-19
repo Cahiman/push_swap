@@ -6,13 +6,13 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:49:56 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/10 18:03:53 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:14:59 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
 	long int	n;
 	long int	res;
