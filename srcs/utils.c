@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_list.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/19 18:40:52 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/22 16:51:51 by baiannon         ###   ########.fr       */
+/*   Created: 2024/07/22 16:57:02 by baiannon          #+#    #+#             */
+/*   Updated: 2024/07/22 16:57:20 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-t_node	init_list(t_node *a, char **split)
+long	ft_atol(const char *nptr)
 {
-	int i;
+	long int	n;
+	long int	res;
+	long int	sign;
 
-	i = 0;
-	while (split[i])
+	n = 0;
+	res = 0;
+	sign = 1;
+	while ((nptr[n] >= 9 && nptr[n] <= 13) || nptr[n] == 32)
+		n++;
+	if (nptr[n] == '+')
+		n++;
+	else if (nptr[n] == '-')
 	{
-		a->data = ft_atol(split[i]);
-		a->next = ft_calloc(sizeof(t_node), 1);
-		if (!a->next)
-			exit(EXIT_FAILURE);
-		a = a->next;		
-		i++;
+		sign *= -1;
+		n++;
 	}
-	return (*a);
+	while (nptr[n] >= '0' && nptr[n] <= '9')
+	{
+		res = res * 10 + nptr[n] - '0';
+		n++;
+	}
+	return (res * sign);
 }

@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:49:56 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/19 15:14:59 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/22 16:54:26 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ long	ft_atoi(const char *nptr)
 // {
 // 	char str[]="   +123ab567";
 
-// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", ft_atol(str));
 // 	printf("%d\n", atoi(str));
 // }

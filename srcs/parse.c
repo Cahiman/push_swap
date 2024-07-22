@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:52:05 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/22 16:30:29 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/22 16:57:17 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	**parse(char **av)
 // 	i = 0;
 // 	while (av[i])
 // 	{
-// 		nbr = ft_atoi(av[i]);
+// 		nbr = ft_atol(av[i]);
 // 		if (nbr > INT_MAX || nbr < INT_MIN)
 // 			exit(EXIT_FAILURE);
 // 		if (!check_double)
@@ -53,6 +53,7 @@ char	**parse(char **av)
 // 	}
 // 	return (a);
 // }
+
 
 int	check_double(char **arg)
 {
@@ -64,13 +65,13 @@ int	check_double(char **arg)
 	i = 0;
 	while (arg[i])
 	{
-		nb1 = ft_atoi(arg[i]);
-		if (nb1 < INT_MIN || nb1 > INT_MAX)
+		nb1 = ft_atol(arg[i]);
+		if (nb1 > INT_MAX || nb1 < INT_MIN)
 			return(0);
 		j = i + 1;
 		while (arg[j])
 		{
-			nb2 = ft_atoi(arg[j]);
+			nb2 = ft_atol(arg[j]);
 			if (nb1 == nb2)
 				return (0);
 			j++;

@@ -6,14 +6,14 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 20:39:04 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/22 15:51:56 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:06:25 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "printf.h"
+# include "ft_printf.h"
 # include "libft.h"
 # include <stdlib.h>
 # include <unistd.h>
@@ -36,5 +36,6 @@ int	main(int ac, char **av);
 void	*ft_free(char **s);
 int	check_number(char *str);
 int check_args(char **split_args);
+long	ft_atol(const char *nptr);
 
 #endif
