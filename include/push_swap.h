@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 20:39:04 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/19 19:16:50 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/22 15:51:56 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 typedef struct s_node
 {
-	int	nbr;
+	// int	nbr;
 	int	data;
 	
 	struct s_node *next;

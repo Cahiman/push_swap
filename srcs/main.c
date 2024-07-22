@@ -6,11 +6,21 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:44:28 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/19 19:16:37 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/22 16:08:56 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
+
+void	print_list(t_node *print)
+{
+	while (print && print->next)
+	{
+		printf("%d ", print->data);
+		print = print->next;
+	}
+}
 
 int	main(int ac, char **av)
 {
@@ -27,6 +37,7 @@ int	main(int ac, char **av)
 	if (!a)
 		exit(EXIT_FAILURE);
 	init_list(a, split_args);
+	print_list(a);
 	return 0;
 }
 

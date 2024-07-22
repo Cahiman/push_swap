@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:37:16 by baiannon          #+#    #+#             */
-/*   Updated: 2023/12/01 17:51:34 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/22 15:53:20 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	dst = (unsigned char *) dest;
 	srce = (unsigned char *) src;
 	i = 0;
-	if (n >= 0 && !dest && !src)
+	if (n > 0 && !dest && !src)
 		return (dest);
 	while (i < n)
 	{
