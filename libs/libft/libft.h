@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:06:44 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/22 16:54:38 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/23 14:48:25 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-long		ft_atoi(const char *nptr);
+long	ft_atoi(const char *nptr);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_isdigit(int c);

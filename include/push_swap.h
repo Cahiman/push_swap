@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 20:39:04 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/22 17:06:25 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:58:05 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,16 @@ typedef struct s_node
 	int	data;
 	
 	struct s_node *next;
+	struct s_node *prev;
 }	t_node;
 
 
 t_node	init_list(t_node *a, char **split);
 // t_node	*fill_list(t_node *a, char **av);
+void	check_empty_args(int ac, char **av);
 char	**parse(char **av);
-int	main(int ac, char **av);
 void	*ft_free(char **s);
+int	main(int ac, char **av);
 int	check_number(char *str);
 int check_args(char **split_args);
 long	ft_atol(const char *nptr);

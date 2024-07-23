@@ -4,6 +4,7 @@ C_FILES = main.c\
 		parse.c\
 		swap.c\
 		init_list.c\
+		check_errors.c\
 
 
 C_BONUS =

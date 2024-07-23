@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:44:28 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/22 16:08:56 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:03:29 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,12 @@ int	main(int ac, char **av)
 		return (0);	
 	a = NULL;
 	split_args = parse(av);
+	check_empty_args(ac, av);
 	if (!check_args(split_args))
+	{
+		write(2, "Error\n", 6);
 		exit(EXIT_FAILURE);
+	}
 	a = ft_calloc(sizeof(t_node), 1);
 	if (!a)
 		exit(EXIT_FAILURE);
