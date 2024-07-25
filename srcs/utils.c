@@ -6,9 +6,11 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 16:57:02 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/22 16:57:20 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/25 18:47:37 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 long	ft_atol(const char *nptr)
 {
@@ -34,4 +36,33 @@ long	ft_atol(const char *nptr)
 		n++;
 	}
 	return (res * sign);
+}
+
+int	find_min_arg(t_node **a, int old_min)
+{
+	t_node	*tmp;
+	int		min;
+
+	tmp = *a;
+	min = INT_MAX;
+	while (tmp)
+	{
+		if (min > tmp->data && tmp->data > old_min)
+			min = tmp->data;
+		tmp = tmp->next;
+	}
+	return (min);
+}
+
+	int	list_size(t_node *lst)
+{
+	int	count;
+
+	count = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		count++;
+	}
+	return (count);
 }

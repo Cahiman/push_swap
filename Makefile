@@ -5,6 +5,8 @@ C_FILES = main.c\
 		swap.c\
 		init_list.c\
 		check_errors.c\
+		algo.c\
+		utils.c\
 
 
 C_BONUS =

@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:44:28 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/23 16:03:29 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/25 19:48:06 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 void	print_list(t_node *print)
 {
-	while (print && print->next)
+	while (print)
 	{
-		printf("%d ", print->data);
+		printf("%d, %d\n ", print->data, print->index);
 		print = print->next;
 	}
 }
@@ -41,7 +41,7 @@ int	main(int ac, char **av)
 	if (!a)
 		exit(EXIT_FAILURE);
 	init_list(a, split_args);
-	print_list(a);
+	remap(a);
 	return 0;
 }
 

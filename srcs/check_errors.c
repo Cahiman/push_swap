@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:20:22 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/23 16:00:42 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/24 21:41:54 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,32 +98,6 @@ void	check_empty_args(int ac, char **av)
 		i++;
 	}
 }
-// int check_empty_args(char **arg)
-// {
-// 	int	i;
-// 	int j;
-// 	int count;
-
-// 	i = 0;
-// 	while (arg[i])
-// 	{
-// 		j = 0;
-// 		count = 0;
-// 		while (arg[i][j])
-// 		{
-// 			if (arg[i][j] == ' ')
-// 				count++;
-// 			j++;
-// 		}
-// 		if (count == j)
-// 		{
-// 			write(2, "Error\n", 6);
-// 			exit(0);
-// 		}
-// 		i++;
-// 	}
-// 	return (1);
-// }
 
 int check_args(char **split_args)
 {
@@ -134,8 +108,6 @@ int check_args(char **split_args)
 			return (0);
 	while (split_args[i])
 	{
-		// if (!check_empty_args(split_args[i]))
-		// 		return (0);
 		if (!get_sign(split_args[i]))
 			return (0);
 		if (!check_number(split_args[i]))
