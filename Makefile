@@ -1,15 +1,16 @@
 NAME = push_swap
 
-C_FILES = main.c\
-		parse.c\
-		swap.c\
-		init_list.c\
-		check_errors.c\
-		algo.c\
-		utils.c\
+C_FILES =	algo.c\
+			check_errors.c\
+			init_list.c\
+			main.c\
+			parse.c\
+			push.c\
+			reverse.c\
+			rotate.c\
+			swap.c\
+			utils.c\
 
-
-C_BONUS =
 
 SRCS = $(addprefix srcs/,$(C_FILES))
 

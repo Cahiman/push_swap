@@ -6,13 +6,13 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 16:57:50 by baiannon          #+#    #+#             */
-/*   Updated: 2024/07/22 17:03:35 by baiannon         ###   ########.fr       */
+/*   Updated: 2024/07/27 17:25:54 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	reverse_list(t_node **swap)
+static int	reverse_list(t_node **swap)
 {
 	t_node	*last_node;
 
